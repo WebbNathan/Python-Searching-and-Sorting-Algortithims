@@ -27,8 +27,7 @@ def quickSortPartition(arr, i, k):
     
     while(not done):
         while(arr[pivot] > arr[l]): l+=1
-        while(arr[pivot] < arr[r]): 
-            r-=1
+        while(arr[pivot] < arr[r]): r-=1
         
         if(l >= r): done = True
         else: 
@@ -43,8 +42,7 @@ def quickSortPartition(arr, i, k):
 
 def quickSort(arr, i, k):
     
-    if(i >= k):
-        return
+    if(i >= k): return
     
     j = quickSortPartition(arr, i, k)
     
