@@ -19,25 +19,24 @@ def binarySearch(sortedArr, target, leftBound, rightBound):
     return -1 
 
 def quickSortPartition(arr, i, k):
-    pivot = (i + k) >> 1
-    l = i
-    r = k
+    midpoint = i + ((k - i) >> 1)
+    pivot = arr[midpoint]
     temp = 0
     done = False
     
     while(not done):
-        while(arr[pivot] > arr[l]): l+=1
-        while(arr[pivot] < arr[r]): r-=1
+        while(pivot > arr[i]): i+=1
+        while(pivot < arr[k]): k-=1
         
-        if(l >= r): done = True
+        if(i >= k): done = True
         else: 
-            temp = arr[l]
-            arr[l] = arr[r]
-            arr[r] = temp
+            temp = arr[i]
+            arr[i] = arr[k]
+            arr[k] = temp
             
-            l+=1
-            r-=1
-    return r
+            i+=1
+            k-=1
+    return k
          
 
 def quickSort(arr, i, k):
